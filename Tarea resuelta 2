@@ -1,0 +1,253 @@
+#include <stdio.h>
+#include <math.h>
+
+// Problema 1: Suma, Resta y Multiplicación de dos números
+// Escribe un programa que dado como datos dos números, calcule la suma, resta y multiplicación de dichos números.
+void sumaRestaMultiplicacion() {
+    float num1, num2;
+    printf("\nProblema 1: Suma, Resta y Multiplicación de dos números\n");
+    printf("Ingrese dos números: ");
+    scanf("%f %f", &num1, &num2);
+    printf("Suma: %.2f, Resta: %.2f, Multiplicación: %.2f\n", num1 + num2, num1 - num2, num1 * num2);
+}
+
+// Problema 2: Área y Circunferencia de un Círculo
+// Construir un programa que dado el radio de un círculo, calcule e imprima el área y la circunferencia.
+void areaCircunferencia() {
+    float radio;
+    printf("\nProblema 2: Área y Circunferencia de un Círculo\n");
+    printf("Ingrese el radio del círculo: ");
+    scanf("%f", &radio);
+    float area = M_PI * radio * radio;
+    float circunferencia = 2 * M_PI * radio;
+    printf("Área: %.2f, Circunferencia: %.2f\n", area, circunferencia);
+}
+
+// Problema 3: Conversión de Dólares a Pesos (1 dólar = 11.96 pesos)
+// En una Casa de Cabio necesitan construir un programa que dado como dato una cantidad expresada en dólares, convierta esa cantidad en pesos.
+void conversionDolaresPesos() {
+    float dolares;
+    printf("\nProblema 3: Conversión de Dólares a Pesos\n");
+    printf("Ingrese la cantidad en dólares: ");
+    scanf("%f", &dolares);
+    float pesos = dolares * 11.96;
+    printf("%.2f dólares equivalen a %.2f pesos\n", dolares, pesos);
+}
+
+// Problema 4: Monto Final con Interés Mensual
+// Una persona invierte en un banco una determinada cantidad de dinero y a una cierta tasa de interés mensual. Construya un programa que permita obtener el monto de dinero que obtendrá al finalizar el mes.
+void montoFinalInteres() {
+    float cantidad, tasaInteres;
+    printf("\nProblema 4: Monto Final con Interés Mensual\n");
+    printf("Ingrese la cantidad inicial y la tasa de interés mensual (en decimal): ");
+    scanf("%f %f", &cantidad, &tasaInteres);
+    float montoFinal = cantidad * (1 + tasaInteres);
+    printf("Monto final después de un mes: %.2f\n", montoFinal);
+}
+
+// Problema 5: Descuento en Tienda de Electrodomésticos (8% si la compra es > $2500)
+// En un negocio de productos electrodomésticos aplican un descuento del 8% a todos aquellos clientes cuya compra es superior a $2,500. Dado como dato el monto de la compra del cliente, calcule lo que el cliente debe pagar.
+void descuentoTienda() {
+    float montoCompra;
+    printf("\nProblema 5: Descuento en Tienda de Electrodomésticos\n");
+    printf("Ingrese el monto de la compra: ");
+    scanf("%f", &montoCompra);
+    if (montoCompra > 2500.0) {
+        montoCompra *= 0.92;
+    }
+    printf("Monto a pagar después del descuento: %.2f\n", montoCompra);
+}
+
+// Problema 6: Aumento de Sueldo (15% si < $1000, 12% si no)
+// Dado como dato el sueldo de un trabajador considere un aumento del 15% si un sueldo es inferior a $1,000 y de un 12% en caso contrario.
+void aumentoSueldo() {
+    float sueldo;
+    printf("\nProblema 6: Aumento de Sueldo\n");
+    printf("Ingrese el sueldo: ");
+    scanf("%f", &sueldo);
+    if (sueldo < 1000.0) {
+        sueldo *= 1.15;
+    } else {
+        sueldo *= 1.12;
+    }
+    printf("Sueldo con aumento: %.2f\n", sueldo);
+}
+
+// Problema 7: Precio Ticket Ferrocarril
+// Hacer un programa para calcular el precio de un ticket ida y vuelta en ferrocarril, conociendo la distancia de ida y el tiempo de estancia.
+void precioTicketFerrocarril() {
+    float distanciaIda;
+    int diasEstancia;
+    printf("\nProblema 7: Precio Ticket Ferrocarril\n");
+    printf("Ingrese la distancia de ida (km) y los días de estancia: ");
+    scanf("%f %d", &distanciaIda, &diasEstancia);
+    float distanciaTotal = distanciaIda * 2;
+    float precioBase = distanciaTotal * 0.23;
+    if (diasEstancia > 7 && distanciaTotal > 800.0) {
+        precioBase *= 0.70;
+    }
+    printf("Precio del ticket: %.2f\n", precioBase);
+}
+
+// Problema 8: Tabla de Multiplicar de un Número N
+// Haga un programa para obtener la tabla de multiplicar de un número entero N, comenzando desde el 1.
+void tablaMultiplicar() {
+    int N;
+    printf("\nProblema 8: Tabla de Multiplicar\n");
+    printf("Ingrese un número entero N: ");
+    scanf("%d", &N);
+    printf("Tabla de multiplicar de %d:\n", N);
+    for (int i = 1; i <= 10; i++) {
+        printf("%d x %d = %d\n", N, i, N * i);
+    }
+}
+
+// Problema 9: Contar Números Positivos, Negativos y Nulos
+// Construya un programa que lea 100 números naturales y cuente cuántos de ellos son positivos, negativos o nulos.
+void contarNumeros() {
+    int num, positivos = 0, negativos = 0, nulos = 0;
+    printf("\nProblema 9: Contar Números Positivos, Negativos y Nulos\n");
+    printf("Ingrese 5 números enteros (para prueba, normalmente serían 100):\n");
+    for (int i = 0; i < 5; i++) { // Reducido a 5 para prueba
+        scanf("%d", &num);
+        if (num > 0) positivos++;
+        else if (num < 0) negativos++;
+        else nulos++;
+    }
+    printf("Positivos: %d, Negativos: %d, Nulos: %d\n", positivos, negativos, nulos);
+}
+
+// Problema 10: Suma de Números Pares entre 10 y 50
+// Hacer un programa que calcule la suma de los números pares comprendidos entre el 10 y 50.
+void sumaPares() {
+    int suma = 0;
+    printf("\nProblema 10: Suma de Números Pares entre 10 y 50\n");
+    for (int i = 10; i <= 50; i += 2) {
+        suma += i;
+    }
+    printf("Suma de pares entre 10 y 50: %d\n", suma);
+}
+
+// Problema 11: Producto de los N Primeros Números Naturales
+// Hacer un programa que calcule e imprima el producto de los N primeros números naturales.
+void productoNaturales() {
+    int N;
+    long long producto = 1;
+    printf("\nProblema 11: Producto de los N Primeros Números Naturales\n");
+    printf("Ingrese un número entero N: ");
+    scanf("%d", &N);
+    for (int i = 1; i <= N; i++) {
+        producto *= i;
+    }
+    printf("Producto de los %d primeros naturales: %lld\n", N, producto);
+}
+
+// Problema 12: Suma de Elementos de un Arreglo Unidimensional
+// Escribir un programa que tal que dado como entrada un arreglo unidimensional de enteros, obtenga como resultado la suma de los mismos.
+void sumaArreglo() {
+    int arreglo[] = {1, 2, 3, 4, 5};
+    int tamano = sizeof(arreglo) / sizeof(arreglo[0]);
+    int suma = 0;
+        printf("\nProblema 12: Suma de Elementos de un Arreglo Unidimensional\n");
+
+    for (int i = 0; i < tamano; i++) {
+        suma += arreglo[i];
+    }
+    printf("Suma de elementos del arreglo: %d\n", suma);
+}
+
+// Problema 13: Contar la Frecuencia de un Número en un Arreglo
+// Construya un programa que tal que dado como entrada un arreglo unidimensional de enteros y un número entero, determine cuántas veces se encuentra el número dentro del arreglo.
+void frecuenciaNumero() {
+    int arreglo[] = {1, 2, 3, 2, 4, 2, 5};
+    int tamano = sizeof(arreglo) / sizeof(arreglo[0]);
+    int numero, frecuencia = 0;
+        printf("\nProblema 13: Contar la Frecuencia de un Número en un Arreglo\n");
+
+    printf("Ingrese el número a buscar en el arreglo: ");
+    scanf("%d", &numero);
+    for (int i = 0; i < tamano; i++) {
+        if (arreglo[i] == numero) frecuencia++;
+    }
+    printf("El número %d aparece %d veces en el arreglo\n", numero, frecuencia);
+}
+
+// Problema 14: Contar Números Positivos, Negativos y Nulos en un Arreglo
+// Escribir un programa que tal que dado como entrada un arreglo unidimensional de enteros, determinar cuántos de ellos son positivos, negativos o nulos.
+void contarArreglo() {
+    int arreglo[] = {-1, 2, -3, 0, 4, -5, 0};
+    int tamano = sizeof(arreglo) / sizeof(arreglo[0]);
+    int positivos = 0, negativos = 0, nulos = 0;
+        printf("\nProblema 14: Contar Números Positivos, Negativos y Nulos en un Arreglo\n");
+
+    for (int i = 0; i < tamano; i++) {
+        if (arreglo[i] > 0) positivos++;
+        else if (arreglo[i] < 0) negativos++;
+        else nulos++;
+    }
+    printf("Positivos: %d, Negativos: %d, Nulos: %d\n", positivos, negativos, nulos);
+}
+
+// Problema 15: Almacenar los 100 Primeros Números Pares en un Arreglo
+// Construir un programa que para almacenar en un arreglo unidimensional los 100 primeros números pares. Imprimir al final el arreglo.
+void almacenarPares() {
+    int arreglo[100];
+        printf("\nProblema 15: Almacenar los 100 Primeros Números Pares en un Arreglo\n");
+
+    for (int i = 0; i < 100; i++) {
+        arreglo[i] = 2 * (i + 1);
+    }
+    printf("Los 100 primeros números pares son:\n");
+    for (int i = 0; i < 100; i++) {
+        printf("%d ", arreglo[i]);
+    }
+    printf("\n");
+}
+
+int main() {
+    int opcion;
+
+    do {
+        printf("\nSeleccione un problema (1-15, 0 para salir):\n");
+        printf("1: Suma, Resta, Multiplicación\n");
+        printf("2: Área y Circunferencia\n");
+        printf("3: Conversión Dólares a Pesos\n");
+        printf("4: Monto Final con Interés\n");
+        printf("5: Descuento en Tienda\n");
+        printf("6: Aumento de Sueldo\n");
+        printf("7: Precio Ticket Ferrocarril\n");
+        printf("8: Tabla de Multiplicar\n");
+        printf("9: Contar Números (Positivos, Negativos, Nulos)\n");
+        printf("10: Suma de Pares (10-50)\n");
+        printf("11: Producto de Naturales\n");
+        printf("12: Suma de Arreglo\n");
+        printf("13: Frecuencia de Número en Arreglo\n");
+        printf("14: Contar en Arreglo (Positivos, Negativos, Nulos)\n");
+        printf("15: Almacenar Pares en Arreglo\n");
+        printf("0: Salir\n");
+
+        scanf("%d", &opcion);
+
+        switch (opcion) {
+            case 1: sumaRestaMultiplicacion(); break;
+            case 2: areaCircunferencia(); break;
+            case 3: conversionDolaresPesos(); break;
+            case 4: montoFinalInteres(); break;
+            case 5: descuentoTienda(); break;
+            case 6: aumentoSueldo(); break;
+            case 7: precioTicketFerrocarril(); break;
+            case 8: tablaMultiplicar(); break;
+            case 9: contarNumeros(); break;
+            case 10: sumaPares(); break;
+            case 11: productoNaturales(); break;
+            case 12: sumaArreglo(); break;
+            case 13: frecuenciaNumero(); break;
+            case 14: contarArreglo(); break;
+            case 15: almacenarPares(); break;
+            case 0: printf("Saliendo...\n"); break;
+            default: printf("Opción inválida.\n");
+        }
+    } while (opcion != 0);
+
+    return 0;
+}
